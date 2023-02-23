@@ -31,17 +31,26 @@ const innerContent = document.querySelectorAll('.expdate');
 const pt2t1v1 = document.querySelector("#p2t1v1");
 const pt2t1v2 = document.querySelector("#p2t1v2");
 const btnP2 = document.querySelector("#a1arquivo");
+const p2 = document.querySelector("#ecpf");
+const priceP2 = document.querySelector("#priceecpfa1arq12m");
+const meses12 = document.querySelector("#p2t112meses");
 pt2t1v1.style.display = "none"
 pt2t1v2.style.display = "none"
 
+p2.addEventListener("click", ()=>{
+    const p2Active = document.querySelector("#ecpfcontent");
+    p2Active.className += " active"
+    p2.className += " active"
+    meses12.className += " active"
+    pt2t1v1.style.display = "block"
+    priceP2.style.display = "block"
+
+});
 
 
 btnP2.addEventListener("click", ()=>{
     pt2t1v1.style.display = "none"
     pt2t1v2.style.display = "none"
-   /*  const p2Active = document.querySelector("#ecpfcontent");
-    p2Active.className += " active" */
-    
 })
 
 
