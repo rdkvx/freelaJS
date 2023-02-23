@@ -1,5 +1,4 @@
 // Make first group of buttons show/hide content about product plus second group of buttons
-
 function openTab(evt, openTab, subTab) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -17,21 +16,45 @@ function openTab(evt, openTab, subTab) {
         parent.style.display = "block";
         parent.className += " active";
     }
-    document.getElementById(openTab).style.display = "block";
-    evt.currentTarget.className += "active";
+    
+    const tab = document.getElementById(openTab);
+    if(tab != null){
+        tab.style.display = "block";
+    }
+    evt.currentTarget.className += " active";
 }
 
 // Make third group of buttons show only when second group is clicked
 
 const btns = document.querySelectorAll('input');
 const innerContent = document.querySelectorAll('.expdate');
+const pt2t1v1 = document.querySelector("#p2t1v1");
+const pt2t1v2 = document.querySelector("#p2t1v2");
+const btnP2 = document.querySelector("#a1arquivo");
+pt2t1v1.style.display = "none"
+pt2t1v2.style.display = "none"
+
+
+
+btnP2.addEventListener("click", ()=>{
+    pt2t1v1.style.display = "none"
+    pt2t1v2.style.display = "none"
+   /*  const p2Active = document.querySelector("#ecpfcontent");
+    p2Active.className += " active" */
+    
+})
+
 
 btns.forEach(btn=>{
     btn.addEventListener('click', ()=>{
-    innerContent.forEach(content=>content.style.display = 'none');
-    document.querySelector('.expdate[data-content='+btn.dataset.btn+']').style.display = "block";
-});
+        //innerContent.forEach(content=>content.style.display = 'none');
+        const contentData = document.querySelector('.expdate[data-content='+btn.dataset.btn+']');
+        if(contentData != null){
+            contentData.style.display = "block";
+        }
+    });
 });
 
 // Get the element with id="" and click on it to go as default open
 document.getElementById("ecpf").click();
+
