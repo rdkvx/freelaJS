@@ -34,6 +34,8 @@ const btnP2 = document.querySelector("#a1arquivo");
 const p2 = document.querySelector("#ecpf");
 const priceP2 = document.querySelector("#priceecpfa1arq12m");
 const meses12 = document.querySelector("#p2t112meses");
+
+
 pt2t1v1.style.display = "none"
 pt2t1v2.style.display = "none"
 
@@ -56,7 +58,6 @@ btnP2.addEventListener("click", ()=>{
 
 btns.forEach(btn=>{
     btn.addEventListener('click', ()=>{
-        //innerContent.forEach(content=>content.style.display = 'none');
         const contentData = document.querySelector('.expdate[data-content='+btn.dataset.btn+']');
         if(contentData != null){
             contentData.style.display = "block";
